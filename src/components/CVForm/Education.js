@@ -11,7 +11,7 @@ const Education = ({ education, onChange, onAdd, onDelete }) => {
       educationItem={educationItem}
       onChange={onChange}
       onDelete={onDelete}
-    />
+    ></EducationItem>
   ));
 
   return (

@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
     <FooterWrapper>
-      <p>Copyright © 2023 BMyka</p>
+      <p>Copyright © 2021 BMyka</p>
       <Link href="https://github.com/BMyka" target="_blank">
         <FaGithub />
       </Link>
@@ -22,23 +22,24 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   width: 100%;
   padding: 0.5rem;
-  background-color ${({ theme }) => theme.colors.dark};
-  color ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) => theme.colors.light};
 `;
 
 const Link = styled.a`
   position: relative;
-  top: 0.3rem;
-  margin-left: 0.5rem;
+  top: 0.2rem;
+  margin-left: 1rem;
   color: ${({ theme }) => theme.colors.light};
-  font-size: 1.8rem;
+  font-size: 2rem;
 
   &:hover {
     color: ${({ theme }) => theme.colors.lightHover};
   }
 
-  :active {
+  &:active {
     color: ${({ theme }) => theme.colors.lightActive};
   }
 `;
+
 export default Footer;

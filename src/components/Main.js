@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import { useReactToPrint } from "react-to-print";
-import CVForm from "./CVForm/CVForm";
-import emptyCV from "./Utils/emptyCV";
+import CVForm from "./CVForm";
+import CVPreview from "./CVPreview";
 import exampleCV from "./Utils/exampleCV";
+import emptyCV from "./Utils/emptyCV";
 
 const Main = () => {
   const [cv, setCv] = useState(emptyCV);
@@ -153,7 +154,7 @@ const Main = () => {
         onLoadExample={handleLoadExample}
         onReset={handleReset}
       />
-      <h1>CV PREVIEW</h1>
+      <CVPreview cv={cv} ref={componentRef} />
     </MainWrapper>
   );
 };

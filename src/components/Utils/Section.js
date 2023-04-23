@@ -19,22 +19,23 @@ const Section = ({
   );
 };
 
-const Title = styled.h3`
-  padding: ${(props) => props.padding};
-  ${(props) =>
-    props.contrast &&
-    css`
-      border-bottom: 1px solid ${({ theme }) => theme.colors.lightBorder};
-      color: ${({ theme }) => theme.colors.blue};
-    `}
-`;
-
 const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: ${(props) => props.padding};
   margin-bottom: 2rem;
+`;
+
+const Title = styled.h3`
+  padding: ${(props) => props.padding};
+
+  ${(props) =>
+    props.contrast &&
+    css`
+      border-bottom: 1px solid ${({ theme }) => theme.colors.lightBorder};
+      color: ${({ theme }) => theme.colors.blue};
+    `}
 `;
 
 const Children = styled.div`

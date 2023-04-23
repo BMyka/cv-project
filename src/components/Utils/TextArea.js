@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TextArea = ({ name, placeholder, onChange, value }) => {
+const TextArea = ({ onChange, name, placeholder, value }) => {
   return (
     <TextAreaWrapper
       onChange={onChange}

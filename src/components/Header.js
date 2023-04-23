@@ -19,7 +19,7 @@ const HeaderWrapper = styled.div`
   font-family: "Zen Tokyo Zoo", cursive;
   display: flex;
   align-items: center;
-  max-height: 1800px;
+  max-width: 1800px;
   padding: 3rem 8rem;
   margin: 0 auto;
   color: ${({ theme }) => theme.colors.light};

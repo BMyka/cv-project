@@ -3,6 +3,7 @@ import Input from "../Utils/Input";
 import Section from "../Utils/Section";
 import TextArea from "../Utils/TextArea";
 import FileInput from "../Utils/FileInput";
+
 const Personal = ({ personalInfo, onChange }) => {
   return (
     <Section
@@ -11,18 +12,18 @@ const Personal = ({ personalInfo, onChange }) => {
       direction="column"
     >
       <Input
+        onChange={(e) => onChange(e)}
         type="text"
         name="firstName"
-        placeholder="First Name"
-        onChange={(e) => onChange(e)}
-        value={personalInfo.name}
+        placeholder="First name"
+        value={personalInfo.firstName}
       />
       <Input
-        type="text"
-        name="latName"
-        placeholder="Last Name"
         onChange={(e) => onChange(e)}
-        value={personalInfo.name}
+        type="text"
+        name="lastName"
+        placeholder="Last name"
+        value={personalInfo.lastName}
       />
       <Input
         onChange={(e) => onChange(e)}
@@ -58,7 +59,6 @@ const Personal = ({ personalInfo, onChange }) => {
         placeholder="Email"
         value={personalInfo.email}
       />
-
       <TextArea
         onChange={(e) => onChange(e)}
         name="description"

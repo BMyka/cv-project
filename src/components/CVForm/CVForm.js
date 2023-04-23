@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Utils/Button";
 import Personal from "./Personal";
-import Experience from "./Experience";
 import Education from "./Education";
+import Experience from "./Experience";
+import Button from "../Utils/Button";
 
 const CVForm = ({
   cv,
@@ -11,9 +11,9 @@ const CVForm = ({
   onChangeExperience,
   onAddExperience,
   onDeleteExperience,
-  onChangeEduction,
-  onAddEduction,
-  onDeleteEduction,
+  onChangeEducation,
+  onAddEducation,
+  onDeleteEducation,
   onPrint,
   onLoadExample,
   onReset,
@@ -29,15 +29,14 @@ const CVForm = ({
       />
       <Education
         education={cv.education}
-        onChange={onChangeEduction}
-        onAdd={onAddEduction}
-        onDelete={onDeleteEduction}
+        onChange={onChangeEducation}
+        onAdd={onAddEducation}
+        onDelete={onDeleteEducation}
       />
-
       <>
-        <Button text="Generate PDF" onclick={onPrint} primary />
-        <Button text="Load Example" onclick={onLoadExample} secondary />
-        <Button text="Reset" onclick={onReset} red />
+        <Button text="Generate PDF" onClick={onPrint} primary></Button>
+        <Button text="Load Example" onClick={onLoadExample} secondary></Button>
+        <Button text="Reset" onClick={onReset} red></Button>
       </>
     </CVFormWrapper>
   );
