@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
     <FooterWrapper>
-      <p>Copyright © 2021 BMyka</p>
+      <p>Copyright © 2023 BMyka</p>
       <Link href="https://github.com/BMyka" target="_blank">
         <FaGithub />
       </Link>

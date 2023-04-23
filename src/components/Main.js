@@ -1,23 +1,27 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
-import { useReactToPrint } from "react-to-print";
+import { v4 as uuidv4 } from "uuid"; // A library for generating unique ids
+import { useReactToPrint } from "react-to-print"; // A library for printing React components
 import CVForm from "./CVForm";
 import CVPreview from "./CVPreview";
 import exampleCV from "./Utils/exampleCV";
 import emptyCV from "./Utils/emptyCV";
 
 const Main = () => {
+  // Initialize the state for the CV form with an empty CV object
   const [cv, setCv] = useState(emptyCV);
 
+  // Handle changes to the personal information section of the form
   const handleChangePersonal = (e) => {
     const { name, value, type } = e.target;
 
+    // If the user is uploading a file, call handleChangeFile instead
     if (type === "file") {
       handleChangeFile(e);
       return;
     }
 
+    // Update the state with the new value
     setCv((prevState) => ({
       ...prevState,
       personalInfo: {
@@ -27,11 +31,13 @@ const Main = () => {
     }));
   };
 
+  // Handle changes to a file input field
   const handleChangeFile = (e) => {
     const { name } = e.target;
     const file = e.target.files[0];
     if (!file) return;
 
+    // Read the file as a Data URL and update the state with the new value
     const reader = new FileReader();
     reader.onload = () => {
       setCv((prevState) => ({
@@ -45,9 +51,11 @@ const Main = () => {
     reader.readAsDataURL(file);
   };
 
+  // Handle changes to the experience section of the form
   const handleChangeExperience = (e, id) => {
     const { name, value } = e.target;
 
+    // Update the state with the new value for the specified experience item
     setCv((prevState) => {
       const newExperience = prevState.experience.map((experienceItem) => {
         if (experienceItem.id === id) {
@@ -59,6 +67,7 @@ const Main = () => {
     });
   };
 
+  // Add a new experience item to the experience section of the form
   const handleAddExperience = () => {
     setCv((prevState) => ({
       ...prevState,
@@ -76,6 +85,7 @@ const Main = () => {
     }));
   };
 
+  // Delete an experience item from the experience section of the form
   const handleDeleteExperience = (id) => {
     setCv((prevState) => {
       const newExperience = prevState.experience.filter(
@@ -85,6 +95,7 @@ const Main = () => {
     });
   };
 
+  // Handle changes to the education section of the form
   const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
 
